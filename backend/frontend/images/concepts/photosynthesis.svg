@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="photoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#061A14"/>
+      <stop offset="100%" stop-color="#0B2E23"/>
+    </linearGradient>
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" rx="16" fill="url(#photoBg)" stroke="#10B981" stroke-width="1.5"/>
+
+  <!-- Sun -->
+  <circle cx="90" cy="80" r="45" fill="url(#sunGrad)" opacity="0.95"/>
+  <g stroke="#F59E0B" stroke-width="2.5">
+    <line x1="90" y1="20" x2="90" y2="5"/>
+    <line x1="140" y1="40" x2="155" y2="28"/>
+    <line x1="150" y1="80" x2="165" y2="80"/>
+    <line x1="140" y1="120" x2="155" y2="132"/>
+    <line x1="90" y1="140" x2="90" y2="155"/>
+  </g>
+  <text x="65" y="85" fill="#78350F" font-family="sans-serif" font-size="13" font-weight="bold">Sunlight</text>
+
+  <!-- Photon Ray Arrows hitting leaf -->
+  <line x1="145" y1="110" x2="230" y2="180" stroke="#FBBF24" stroke-width="3" stroke-dasharray="5,3"/>
+  <polygon points="225,170 240,185 220,185" fill="#FBBF24"/>
+
+  <!-- Plant Leaf (Centered) -->
+  <path d="M 230 250 C 230 140, 390 140, 430 250 C 430 340, 230 340, 230 250 Z" fill="url(#leafGrad)" stroke="#10B981" stroke-width="2.5"/>
+  <path d="M 230 250 Q 330 240 430 250" stroke="#064E3B" stroke-width="2.5" fill="none"/>
+
+  <!-- Incoming Ingredients -->
+  <!-- 1. Carbon Dioxide (CO2) -->
+  <rect x="70" y="210" width="110" height="38" rx="8" fill="rgba(6, 182, 212, 0.2)" stroke="#06B6D4" stroke-width="1.5"/>
+  <text x="82" y="234" fill="#67E8F9" font-family="sans-serif" font-size="14" font-weight="bold">6 CO₂ (Air)</text>
+  <line x1="180" y1="230" x2="230" y2="245" stroke="#06B6D4" stroke-width="2.5"/>
+
+  <!-- 2. Water (H2O from Roots) -->
+  <rect x="70" y="290" width="110" height="38" rx="8" fill="rgba(59, 130, 246, 0.2)" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="78" y="314" fill="#93C5FD" font-family="sans-serif" font-size="14" font-weight="bold">6 H₂O (Roots)</text>
+  <line x1="180" y1="305" x2="250" y2="280" stroke="#3B82F6" stroke-width="2.5"/>
+
+  <!-- Output Products -->
+  <!-- 1. Glucose (Energy Sugar) -->
+  <rect x="470" y="200" width="140" height="42" rx="8" fill="rgba(245, 158, 11, 0.2)" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="480" y="226" fill="#FCD34D" font-family="sans-serif" font-size="14" font-weight="bold">C₆H₁₂O₆ (Sugar)</text>
+  <line x1="420" y1="240" x2="470" y2="225" stroke="#F59E0B" stroke-width="2.5"/>
+
+  <!-- 2. Oxygen (O2) Released -->
+  <rect x="470" y="280" width="140" height="42" rx="8" fill="rgba(16, 185, 129, 0.2)" stroke="#10B981" stroke-width="1.5"/>
+  <text x="480" y="306" fill="#6EE7B7" font-family="sans-serif" font-size="14" font-weight="bold">6 O₂ (Oxygen!)</text>
+  <line x1="420" y1="265" x2="470" y2="295" stroke="#10B981" stroke-width="2.5"/>
+
+  <!-- Top Equation Banner -->
+  <rect x="250" y="25" width="360" height="50" rx="10" fill="rgba(0, 0, 0, 0.6)" stroke="#059669" stroke-width="1.5"/>
+  <text x="265" y="47" fill="#6EE7B7" font-family="sans-serif" font-size="11" font-weight="bold">BALANCED CHEMICAL REACTION</text>
+  <text x="265" y="65" fill="#FFFFFF" font-family="sans-serif" font-size="13" font-weight="bold">6CO₂ + 6H₂O + Sunlight ➔ C₆H₁₂O₆ + 6O₂</text>
+</svg>

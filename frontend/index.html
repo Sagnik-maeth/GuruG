@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GuruG — Your Personal AI Tutor. Your Language. Your Pace.</title>
+  
+  <!-- Meta SEO -->
+  <meta name="description" content="Intelligent, personalized, multilingual AI tutoring platform for school students and teenagers. Master difficult concepts in your native language with step-by-step reasoning." />
+  <meta name="keywords" content="AI tutor, EdTech, multilingual education, Hindi, Hinglish, Tamil, Bengali, Telugu, math tutor, physics solver" />
+
+  <!-- Google Fonts Preload: Plus Jakarta Sans, Inter, Poppins, Outfit, Lexend, Comic Neue, Roboto, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Inter:wght@300;400;500;600;700;800&family=Lexend:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Immediate Theme & Font Initializer (prevents flash of wrong theme/font) -->
+  <script>
+    (function() {
+      try {
+        const theme = localStorage.getItem('gurug_theme') || 'dark';
+        if (theme === 'light') {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        } else {
+          document.documentElement.classList.remove('light');
+          document.documentElement.classList.add('dark');
+        }
+        const font = localStorage.getItem('gurug_font') || 'jakarta';
+        document.documentElement.setAttribute('data-font', font);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              purple: '#8B5CF6',
+              cyan: '#06B6D4',
+              navy: '#0B0F17',
+              charcoal: '#111827'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- KaTeX CSS & JS for Math Formula Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Tesseract.js for High-Speed Client OCR Text Extraction -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/style.css?v=2.5" />
+</head>
+<body class="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] flex flex-col md:flex-row antialiased selection:bg-purple-600 selection:text-white transition-colors duration-200">
+
+  <!-- Global Left Taskbar / Responsive Sidebar Navigation -->
+  <div id="navbar-container" class="shrink-0 z-40"></div>
+
+  <!-- Single Page Application Dynamic View Container -->
+  <main id="app-view" class="flex-1 min-w-0 h-screen overflow-y-auto relative"></main>
+
+  <!-- High-Definition Educational Image Lightbox Modal -->
+  <div id="image-lightbox-modal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 transition-all" onclick="if(event.target===this) closeImageLightbox()">
+    <div class="relative max-w-4xl w-full max-h-[92vh] flex flex-col glass-panel-elevated border border-purple-500/40 rounded-3xl overflow-hidden shadow-2xl">
+      <!-- Lightbox Header -->
+      <div class="flex items-center justify-between p-4 border-b border-white/10 bg-black/40">
+        <div class="flex items-center gap-2.5">
+          <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+          <h3 id="lightbox-title" class="text-sm sm:text-base font-bold text-white">Visual Concept Diagram</h3>
+        </div>
+        <button onclick="closeImageLightbox()" class="p-1.5 rounded-xl text-gray-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer" title="Close (Esc)">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <!-- Lightbox Image Area -->
+      <div class="flex-1 overflow-auto p-4 flex items-center justify-center bg-black/60">
+        <img id="lightbox-img" src="" alt="Enlarged Diagram" class="max-w-full max-h-[65vh] object-contain rounded-xl shadow-lg transition-transform" />
+      </div>
+      <!-- Lightbox Caption Bar -->
+      <div class="p-4 border-t border-white/10 bg-black/60 text-xs text-gray-300">
+        <p id="lightbox-caption" class="leading-relaxed"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Component Scripts -->
+  <script src="/js/api.js?v=2.8"></script>
+  <script src="/js/components/navbar.js?v=2.5"></script>
+  <script src="/js/components/landing.js?v=2.4"></script>
+  <script src="/js/components/auth.js?v=2.4"></script>
+  <script src="/js/components/dashboard.js?v=2.7"></script>
+  <script src="/js/components/tutor.js?v=2.8"></script>
+  <script src="/js/components/debate.js?v=2.5"></script>
+  <script src="/js/components/quiz.js?v=2.4"></script>
+  <script src="/js/components/subjects.js?v=2.5"></script>
+  <script src="/js/components/solver.js?v=2.6"></script>
+  <script src="/js/components/progress.js?v=2.5"></script>
+  <script src="/js/components/settings.js?v=2.8"></script>
+  <script src="/js/app.js?v=2.9"></script>
+
+</body>
+</html>

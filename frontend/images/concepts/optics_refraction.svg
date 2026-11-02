@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="optBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0F19"/><stop offset="100%" stop-color="#141B2D"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" rx="16" fill="url(#optBg)" stroke="#2A334A" stroke-width="1.5"/>
+  <!-- Lower Medium (Water/Glass, n2 = 1.5) -->
+  <rect x="0" y="200" width="640" height="200" fill="rgba(6, 182, 212, 0.15)"/>
+  <line x1="0" y1="200" x2="640" y2="200" stroke="#38BDF8" stroke-width="2"/>
+  <text x="30" y="180" fill="#94A3B8" font-family="sans-serif" font-size="13" font-weight="bold">Medium 1: Air (n₁ = 1.0)</text>
+  <text x="30" y="235" fill="#38BDF8" font-family="sans-serif" font-size="13" font-weight="bold">Medium 2: Water / Glass (n₂ = 1.5)</text>
+
+  <!-- Normal Line -->
+  <line x1="320" y1="40" x2="320" y2="360" stroke="#A78BFA" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="328" y="70" fill="#C4B5FD" font-family="sans-serif" font-size="11">Normal Line</text>
+
+  <!-- Incident Ray (θ1 = 45 deg) -->
+  <line x1="160" y1="40" x2="320" y2="200" stroke="#F59E0B" stroke-width="4"/>
+  <polygon points="245,115 255,128 238,125" fill="#F59E0B"/>
+  <text x="210" y="110" fill="#FCD34D" font-family="sans-serif" font-size="12" font-weight="bold">Incident Ray (θ₁)</text>
+
+  <!-- Refracted Ray (Bends toward normal, θ2 ~ 28 deg) -->
+  <line x1="320" y1="200" x2="420" y2="360" stroke="#10B981" stroke-width="4"/>
+  <polygon points="365,275 375,288 358,285" fill="#10B981"/>
+  <text x="380" y="290" fill="#6EE7B7" font-family="sans-serif" font-size="12" font-weight="bold">Refracted Ray (θ₂ &lt; θ₁)</text>
+
+  <!-- Snell's Law Banner -->
+  <rect x="390" y="25" width="220" height="55" rx="10" fill="#064E3B" stroke="#059669"/>
+  <text x="405" y="47" fill="#6EE7B7" font-family="sans-serif" font-size="10" font-weight="bold">SNELL'S LAW OF REFRACTION</text>
+  <text x="405" y="67" fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold">n₁ sin(θ₁) = n₂ sin(θ₂)</text>
+</svg>

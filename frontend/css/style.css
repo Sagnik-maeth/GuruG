@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --app-font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --bg-primary: #07090E;
+  --bg-secondary: #0D1117;
+  --bg-card: #121824;
+  --bg-card-hover: #172030;
+  --text-primary: #F3F4F6;
+  --text-secondary: #9CA3AF;
+  --text-muted: #6B7280;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-card: rgba(255, 255, 255, 0.12);
+  --border-focus: rgba(139, 92, 246, 0.5);
+  --accent-purple: #8B5CF6;
+  --accent-cyan: #06B6D4;
+  --accent-blue: #3B82F6;
+  --accent-emerald: #10B981;
+}
+
+/* Font Choices */
+[data-font="jakarta"] { --app-font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; }
+[data-font="inter"] { --app-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+[data-font="poppins"] { --app-font: 'Poppins', sans-serif; }
+[data-font="outfit"] { --app-font: 'Outfit', sans-serif; }
+[data-font="lexend"] { --app-font: 'Lexend', sans-serif; }
+[data-font="comic"] { --app-font: 'Comic Neue', cursive, sans-serif; }
+[data-font="roboto"] { --app-font: 'Roboto', sans-serif; }
+
+body {
+  font-family: var(--app-font);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* -------------------------------------------------------------
+ * LIGHT THEME DEFINITIONS & OVERRIDES
+ * ------------------------------------------------------------- */
+html.light {
+  --bg-primary: #F8FAFC;
+  --bg-secondary: #F1F5F9;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F8FAFC;
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --border-subtle: rgba(15, 23, 42, 0.09);
+  --border-card: rgba(15, 23, 42, 0.12);
+  --border-focus: rgba(139, 92, 246, 0.5);
+  --accent-purple: #7C3AED;
+  --accent-cyan: #0891B2;
+  --accent-blue: #2563EB;
+  --accent-emerald: #059669;
+}
+
+html.light body {
+  background-color: #F8FAFC !important;
+  color: #0F172A !important;
+}
+
+/* Glassmorphism surfaces in light mode */
+html.light .glass-panel {
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-color: rgba(15, 23, 42, 0.09) !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05) !important;
+}
+
+html.light .glass-panel-elevated {
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(20px);
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Light mode text contrast */
+html.light .text-white {
+  color: #0F172A !important;
+}
+html.light .text-gray-100 {
+  color: #1E293B !important;
+}
+html.light .text-gray-200 {
+  color: #334155 !important;
+}
+html.light .text-gray-300 {
+  color: #475569 !important;
+}
+html.light .text-gray-400 {
+  color: #64748B !important;
+}
+
+/* Buttons and links with gradients: keep text white in light mode */
+html.light button.bg-gradient-to-r,
+html.light a.bg-gradient-to-r,
+html.light .bg-gradient-to-r .text-white,
+html.light .bg-purple-600,
+html.light .bg-indigo-600,
+html.light .bg-purple-600 *,
+html.light .bg-indigo-600 *,
+html.light [class*="from-purple-"] *,
+html.light [class*="from-indigo-"] * {
+  color: #FFFFFF !important;
+}
+
+/* Form controls and inputs in light mode */
+html.light input:not([type="checkbox"]):not([type="radio"]),
+html.light select,
+html.light textarea {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: #CBD5E1 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+html.light input:focus,
+html.light select:focus,
+html.light textarea:focus {
+  border-color: #8B5CF6 !important;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15) !important;
+}
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94A3B8 !important;
+}
+
+/* Dark background container overrides */
+html.light .bg-black\/40,
+html.light .bg-black\/30,
+html.light .bg-black\/50,
+html.light .bg-black\/20 {
+  background-color: rgba(241, 245, 249, 0.8) !important;
+}
+
+html.light .bg-white\/5,
+html.light .bg-white\/10,
+html.light .bg-white\/15 {
+  background-color: rgba(15, 23, 42, 0.04) !important;
+}
+
+html.light .border-white\/5,
+html.light .border-white\/10,
+html.light .border-white\/15,
+html.light .border-white\/20 {
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+html.light .bg-\[\#07090E\],
+html.light .bg-\[\#0B0F17\],
+html.light .bg-\[\#0D1117\] {
+  background-color: #F8FAFC !important;
+}
+
+/* KaTeX formulas in light mode */
+html.light .katex {
+  color: #0F172A !important;
+}
+html.light .katex-display,
+html.light .katex-display-container {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(139, 92, 246, 0.25) !important;
+  box-shadow: 0 4px 15px -3px rgba(15, 23, 42, 0.06) !important;
+}
+
+/* Scrollbars in light mode */
+html.light ::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.2);
+}
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.6);
+}
+
+/* Light mode accent texts */
+html.light .text-purple-300,
+html.light .text-purple-400 {
+  color: #7C3AED !important;
+}
+html.light .text-cyan-300,
+html.light .text-cyan-400 {
+  color: #0891B2 !important;
+}
+html.light .text-emerald-300,
+html.light .text-emerald-400 {
+  color: #059669 !important;
+}
+html.light .text-rose-300,
+html.light .text-rose-400 {
+  color: #E11D48 !important;
+}
+html.light .text-amber-300,
+html.light .text-amber-400 {
+  color: #D97706 !important;
+}
+
+/* Subtle badges in light mode */
+html.light .bg-purple-500\/20 {
+  background-color: rgba(124, 58, 237, 0.1) !important;
+  border-color: rgba(124, 58, 237, 0.25) !important;
+}
+html.light .bg-cyan-500\/20 {
+  background-color: rgba(8, 145, 178, 0.1) !important;
+  border-color: rgba(8, 145, 178, 0.25) !important;
+}
+html.light .bg-emerald-500\/20 {
+  background-color: rgba(5, 150, 105, 0.1) !important;
+  border-color: rgba(5, 150, 105, 0.25) !important;
+}
+html.light .bg-rose-500\/20 {
+  background-color: rgba(225, 29, 72, 0.1) !important;
+  border-color: rgba(225, 29, 72, 0.25) !important;
+}
+
+/* Code blocks in light mode */
+html.light pre {
+  background-color: #0F172A !important;
+  color: #38BDF8 !important;
+}
+html.light pre code {
+  color: #38BDF8 !important;
+}
+html.light code:not(pre code) {
+  background-color: rgba(124, 58, 237, 0.08) !important;
+  color: #6D28D9 !important;
+  border-color: rgba(124, 58, 237, 0.2) !important;
+}
+
+/* Sidebar Navigation Items */
+.sidebar-nav-item {
+  transition: all 0.15s ease-in-out;
+}
+.sidebar-nav-item.active {
+  background: linear-gradient(to right, rgba(139, 92, 246, 0.25), rgba(99, 102, 241, 0.15));
+  border-color: rgba(139, 92, 246, 0.5);
+  color: #C4B5FD;
+  font-weight: 600;
+}
+html.light .sidebar-nav-item.active {
+  background: rgba(124, 58, 237, 0.12) !important;
+  border-color: rgba(124, 58, 237, 0.35) !important;
+  color: #6D28D9 !important;
+  font-weight: 600;
+}
+
+code, pre, .font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #07090E;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.5);
+}
+
+/* Glassmorphism surfaces */
+.glass-panel {
+  background: rgba(18, 24, 36, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+}
+
+.glass-panel-elevated {
+  background: rgba(22, 30, 46, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+}
+
+.glow-purple {
+  box-shadow: 0 0 35px -5px rgba(139, 92, 246, 0.35);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 35px -5px rgba(6, 182, 212, 0.35);
+}
+
+/* Subtle background glowing orbs */
+.bg-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  opacity: 0.18;
+}
+
+/* KaTeX custom styling inside dark mode */
+.katex {
+  color: #E2E8F0 !important;
+  font-size: 1.08em;
+}
+.katex-display, .katex-display-container {
+  margin: 0.8em 0 !important;
+  padding: 0.85em 1.2em;
+  background: rgba(18, 24, 38, 0.7);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.5);
+  overflow-x: auto;
+  text-align: center;
+}
+
+.katex-inline-container {
+  display: inline-block;
+  padding: 0 0.2em;
+}
+
+/* Typing animation indicator */
+.typing-dot {
+  animation: typingBounce 1.4s infinite ease-in-out both;
+}
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+.typing-dot:nth-child(3) { animation-delay: 0s; }
+
+@keyframes typingBounce {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+/* Smooth fade-in transitions */
+.fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  background: rgba(4, 6, 10, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+/* Audio VU Meter & Pulsing Mic */
+.vu-meter-bar {
+  transition: width 0.08s ease-out;
+}
+
+.mic-recording-pulse {
+  animation: micPulse 1.2s infinite ease-in-out;
+}
+
+@keyframes micPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    transform: scale(1);
+  }
+}
+
+.audio-wave-bar {
+  animation: audioWave 1s ease-in-out infinite alternate;
+}
+
+@keyframes audioWave {
+  0% { height: 4px; }
+  100% { height: 20px; }
+}
+
+/* Concept Visual Cards & Diagrams */
+.concept-visual-card {
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.concept-visual-card:hover {
+  border-color: rgba(139, 92, 246, 0.6);
+  box-shadow: 0 10px 30px -5px rgba(139, 92, 246, 0.25);
+}
+
+html.light .concept-visual-card {
+  background: #FFFFFF !important;
+  border-color: rgba(139, 92, 246, 0.3) !important;
+  box-shadow: 0 8px 25px -4px rgba(15, 23, 42, 0.08) !important;
+}
+html.light .concept-visual-card .bg-black\/40 {
+  background-color: #F8FAFC !important;
+  border-color: #E2E8F0 !important;
+}
+html.light .concept-visual-card .bg-white\/\[0\.02\] {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+}
+html.light .concept-visual-card p,
+html.light .concept-visual-card span.font-bold {
+  color: #1E293B !important;
+}
+
+/* -------------------------------------------------------------
+ * GURUG LENS (GOOGLE LENS STYLE SCANNER & VIEWFINDER)
+ * ------------------------------------------------------------- */
+.lens-viewfinder {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+
+.lens-corner {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+  z-index: 20;
+}
+.lens-corner-tl {
+  top: 14px;
+  left: 14px;
+  border-top: 3px solid #06B6D4;
+  border-left: 3px solid #06B6D4;
+  border-top-left-radius: 10px;
+  filter: drop-shadow(0 0 6px rgba(6, 182, 212, 0.6));
+}
+.lens-corner-tr {
+  top: 14px;
+  right: 14px;
+  border-top: 3px solid #06B6D4;
+  border-right: 3px solid #06B6D4;
+  border-top-right-radius: 10px;
+  filter: drop-shadow(0 0 6px rgba(6, 182, 212, 0.6));
+}
+.lens-corner-bl {
+  bottom: 14px;
+  left: 14px;
+  border-bottom: 3px solid #06B6D4;
+  border-left: 3px solid #06B6D4;
+  border-bottom-left-radius: 10px;
+  filter: drop-shadow(0 0 6px rgba(6, 182, 212, 0.6));
+}
+.lens-corner-br {
+  bottom: 14px;
+  right: 14px;
+  border-bottom: 3px solid #06B6D4;
+  border-right: 3px solid #06B6D4;
+  border-bottom-right-radius: 10px;
+  filter: drop-shadow(0 0 6px rgba(6, 182, 212, 0.6));
+}
+
+.lens-laser-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #06B6D4 20%, #A855F7 50%, #06B6D4 80%, transparent 100%);
+  box-shadow: 0 0 16px 4px rgba(6, 182, 212, 0.7), 0 0 24px 8px rgba(168, 85, 247, 0.4);
+  z-index: 25;
+  pointer-events: none;
+  animation: lensLaserSweep 2s ease-in-out infinite alternate;
+}
+
+@keyframes micPulseRing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(239, 68, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+.mic-recording-pulse {
+  animation: micPulseRing 1.5s infinite;
+}
+
+/* =============================================================
+ * DEBATE ARENA SOUNDWAVE & PODIUM FX
+ * ============================================================= */
+.debate-soundwave-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 2.5px;
+  height: 20px;
+}
+
+.wave-bar {
+  display: inline-block;
+  width: 3px;
+  background: #38BDF8;
+  border-radius: 9999px;
+  animation: wavePulse 0.8s ease-in-out infinite alternate;
+}
+.wave-bar:nth-child(1) { height: 6px; animation-delay: 0.1s; }
+.wave-bar:nth-child(2) { height: 16px; animation-delay: 0.25s; }
+.wave-bar:nth-child(3) { height: 20px; animation-delay: 0.15s; }
+.wave-bar:nth-child(4) { height: 14px; animation-delay: 0.3s; }
+.wave-bar:nth-child(5) { height: 8px; animation-delay: 0.05s; }
+
+@keyframes wavePulse {
+  0% { transform: scaleY(0.3); opacity: 0.5; }
+  100% { transform: scaleY(1.1); opacity: 1; }
+}
+
+.debate-podium-active {
+  box-shadow: 0 0 35px -5px rgba(139, 92, 246, 0.35), 0 0 20px -5px rgba(6, 182, 212, 0.25);
+}
+
+.debate-mic-glow-recording {
+  animation: debateMicRing 1.3s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes debateMicRing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.8);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(244, 63, 94, 0);
+    transform: scale(1.04);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 63, 94, 0);
+    transform: scale(1);
+  }
+}

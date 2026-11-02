@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bondBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0F19"/><stop offset="100%" stop-color="#141B2D"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" rx="16" fill="url(#bondBg)" stroke="#2A334A" stroke-width="1.5"/>
+  <!-- Ionic Side -->
+  <rect x="30" y="80" width="270" height="280" rx="12" fill="rgba(244, 63, 94, 0.1)" stroke="#F43F5E" stroke-width="1.5"/>
+  <text x="50" y="115" fill="#FDA4AF" font-family="sans-serif" font-size="16" font-weight="bold">1. IONIC BOND (Transfer)</text>
+  <circle cx="100" cy="200" r="35" fill="#E11D48"/>
+  <text x="88" y="206" fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold">Na⁺</text>
+  <line x1="140" y1="200" x2="200" y2="200" stroke="#FBBF24" stroke-width="3" stroke-dasharray="4,3"/>
+  <circle cx="170" cy="190" r="5" fill="#FBBF24"/>
+  <text x="145" y="180" fill="#FDE68A" font-family="sans-serif" font-size="10">e⁻ transfer</text>
+  <circle cx="230" cy="200" r="42" fill="#0284C7"/>
+  <text x="218" y="206" fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold">Cl⁻</text>
+  <text x="50" y="300" fill="#CBD5E1" font-family="sans-serif" font-size="12">Electrostatic attraction</text>
+  <text x="50" y="325" fill="#94A3B8" font-family="sans-serif" font-size="11">e.g. Table Salt (NaCl)</text>
+
+  <!-- Covalent Side -->
+  <rect x="340" y="80" width="270" height="280" rx="12" fill="rgba(6, 182, 212, 0.1)" stroke="#06B6D4" stroke-width="1.5"/>
+  <text x="360" y="115" fill="#67E8F9" font-family="sans-serif" font-size="16" font-weight="bold">2. COVALENT BOND (Sharing)</text>
+  <circle cx="430" cy="200" r="36" fill="rgba(139, 92, 246, 0.4)" stroke="#8B5CF6" stroke-width="2"/>
+  <circle cx="510" cy="200" r="36" fill="rgba(16, 185, 129, 0.4)" stroke="#10B981" stroke-width="2"/>
+  <ellipse cx="470" cy="200" rx="18" ry="28" fill="rgba(6, 182, 212, 0.5)"/>
+  <circle cx="465" cy="190" r="4" fill="#FFFFFF"/>
+  <circle cx="475" cy="210" r="4" fill="#FFFFFF"/>
+  <text x="445" y="160" fill="#A5F3FC" font-family="sans-serif" font-size="10">Shared Pair</text>
+  <text x="420" y="205" fill="#EDE9FE" font-family="sans-serif" font-size="13" font-weight="bold">H</text>
+  <text x="500" y="205" fill="#D1FAE5" font-family="sans-serif" font-size="13" font-weight="bold">H</text>
+  <text x="360" y="300" fill="#CBD5E1" font-family="sans-serif" font-size="12">Shared electron cloud</text>
+  <text x="360" y="325" fill="#94A3B8" font-family="sans-serif" font-size="11">e.g. Water (H₂O), Methane (CH₄)</text>
+
+  <!-- Title -->
+  <text x="30" y="45" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold">CHEMISTRY • CHEMICAL BONDING TYPES</text>
+</svg>
