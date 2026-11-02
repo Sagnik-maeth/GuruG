@@ -5,7 +5,7 @@ GuruG is an intelligent, personalized, multilingual AI tutoring platform designe
 
 ---
 
-## 🌟 Hackathon Presentation Highlights
+
 
 1. **Accessibility (No Language Barrier):** Students can learn complex STEM concepts in the language they think in: Hindi, Hinglish, Bengali, Tamil, Telugu, Kannada, Marathi, Gujarati, Malayalam, and Urdu.
 2. **Personalization (Adaptive Pacing):** Explanations automatically adapt to the student's grade level (Class 6–8, 9–10, 11–12, College) with 6 explanation modes: Simple, Detailed, Step-by-Step, Explain Like I'm 10, Real-Life Examples, and Exam Prep.
@@ -13,9 +13,7 @@ GuruG is an intelligent, personalized, multilingual AI tutoring platform designe
 4. **Interactive Practice (Smart Quizzes):** Topic-level quiz generator with instant scoring, circular gauge percentage, achievement badges, and pedagogical explanations for every mistake.
 5. **Auditory & Visual Polish:** Formula rendering via KaTeX ($F=ma$, $\frac{-b \pm \sqrt{b^2-4ac}}{2a}$), clean code blocks, and Text-to-Speech (TTS) audio narration in the student's native language.
 
----
 
-## ⚡ 1-Click Demo Access for Judges
 
 We have built a dedicated **1-Click Demo Login** directly into the interface:
 - **Demo Student:** `demo@gurug.edu` / `password123`
